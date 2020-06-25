@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div>敌对水域修改器</div>
+    <div>敌对水域修改器！</div>
     <el-button type="primary" icon="el-icon-search" @click="selectGameRootPath">选择敌对水域游戏根目录</el-button>
     <div>{{gameRootPath}}</div>
     <el-tabs v-model="activeTab">
@@ -24,13 +24,21 @@ export default {
     };
   },
   methods: {
-    selectGameRootPath: () => {
+    selectGameRootPath: function() {
+      const _this = this;
       console.log("select game root path");
-      // console.log(
-        window.electron.dialog.showOpenDialog({
-          properties: ["openFile", "multiSelections"]
+      window.remote.dialog
+        .showOpenDialog({
+          properties: ["openDirectory"]
         })
-      // );
+        .then(function(result) {
+          if (!result.canceled) {
+            _this.gameRootPath = result.filePaths[0];
+          }
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
     }
   }
 };
