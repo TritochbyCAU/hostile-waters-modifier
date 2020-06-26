@@ -5,9 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package":"electron-packager . hostile-waters-modifier --platform=win32 --arch=x64 --out=./out --app-version=0.0.1 --overwrite"
+    "package": "electron-packager . hostile-waters-modifier --platform=win32 --arch=x64 --out=./out --app-version=0.0.1 --overwrite"
   },
   "devDependencies": {
-    "electron": "^9.0.5"
+    "electron": "^9.0.5",
+    "electron-packager": "^14.2.1"
   }
 }
