@@ -3,6 +3,7 @@ node_modules
 app/node_modules
 hostile-waters-mngpack
 test/hostile-waters
+out
 
 # local env files
 .env.local
