@@ -39,5 +39,6 @@ export default {
 }
 #about .about-url {
   font-weight: bold;
+  cursor: default;
 }
 </style>
